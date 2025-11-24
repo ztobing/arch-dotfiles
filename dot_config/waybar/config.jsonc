@@ -21,7 +21,8 @@
     "icon": false,
     "icon-size": 16,
     "max-length": 70,
-    "format": "{title}"
+    "format": "{title}",
+    "format-alt": "{class} - {title}"
   },
   "keyboard-state": {
     "numlock": true,
