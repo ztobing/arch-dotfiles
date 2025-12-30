@@ -2,10 +2,11 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-left": 8,
-  "margin-right": 8,
-  "modules-left": ["hyprland/window"],
-  "modules-center": ["hyprland/workspaces"],
+  "margin-left": 4,
+  "margin-right": 4,
+  "margin-top": 4,
+  "modules-left": ["custom/menu", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": [],
   "modules-right": [
     "backlight",
     "wireplumber",
@@ -21,8 +22,8 @@
     "icon": false,
     "icon-size": 16,
     "max-length": 70,
-    "format": "{title}",
-    "format-alt": "{class} - {title}"
+    "format": "{class}",
+    "format-alt": "{title}"
   },
   "keyboard-state": {
     "numlock": true,
@@ -115,11 +116,11 @@
       "warning": 20,
       "critical": 10
     },
-    "format": "{icon}  {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
-    "format-plugged": "󰚥  {capacity}%",
-    "format-alt": "{icon}  {time}",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon} {time}",
     "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
   },
   "power-profiles-daemon": {
@@ -176,5 +177,10 @@
       "hibernate": "systemctl hibernate",
       "firmware": "systemctl reboot --firmware-setup"
     }
+  },
+  "custom/menu": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
   }
 }
