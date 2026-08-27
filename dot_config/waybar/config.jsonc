@@ -2,28 +2,43 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-left": 4,
-  "margin-right": 4,
-  "margin-top": 4,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-top": 0,
   "modules-left": ["custom/menu", "hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
   "modules-right": [
+    "tray",
     "backlight",
     "wireplumber",
     "network",
     "power-profiles-daemon",
     "battery",
-    "clock",
-    "tray",
-    "idle_inhibitor",
-    "custom/power"
+
+    "clock"
+    // "idle_inhibitor"
+    // "custom/power",
   ],
   "hyprland/window": {
     "icon": false,
     "icon-size": 16,
     "max-length": 70,
     "format": "{class}",
-    "format-alt": "{title}"
+    "format-alt": "{title}",
+    "rewrite": {
+      "code": "Visual Studio Code",
+      "com.saivert.pwvucontrol": "PipeWire Volume Control",
+      "dev.zed.Zed": "Zed",
+      "obsidian": "Obsidian",
+      "orca-slicer": "Orca Slicer",
+      "org.gnome.Calculator": "Calculator",
+      "org.gnome.eog": "Eye of GNOME",
+      "org.gnome.Nautilus": "Files",
+      "vesktop": "Discord",
+      "warp-taskbar": "Cloudflare One Client",
+      "yaak-app-client": "Yaak",
+      "zen": "Zen"
+    }
   },
   "keyboard-state": {
     "numlock": true,
@@ -87,6 +102,7 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a %d %b %H:%M}",
     "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
@@ -108,7 +124,17 @@
     // "device": "acpi_video1",
     "format": "{icon}",
     "tooltip-format": "Brightness: {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": [
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>",
+      "<span font='14'></span>"
+    ]
   },
   "battery": {
     "states": {
@@ -121,7 +147,13 @@
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰚥 {capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    "format-icons": [
+      "<span font='10'>󰁺</span>",
+      "<span font='10'>󰁼</span>",
+      "<span font='10'>󰁾</span>",
+      "<span font='10'>󰂀</span>",
+      "<span font='10'>󰁹</span>"
+    ]
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -136,19 +168,23 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "󰖩",
-    "format-ethernet": "󰈀",
-    "tooltip-format": "󰈀 {ifname} {ipaddr}/{cidr}",
-    "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰈂",
-    "format-alt": "󰈀 {ifname} {ipaddr}/{cidr}"
+    "format-wifi": "<span font='14'>󰖩</span>",
+    "format-ethernet": "<span font='14'>󰈀</span>",
+    "tooltip-format": "<span font='14' rise='-2000'>󰈀</span> {ifname} {ipaddr}/{cidr}",
+    "format-linked": "<span font='14'>󰈀</span> {ifname} (No IP)",
+    "format-disconnected": "<span font='14'>󰈂</span>",
+    "format-alt": "<span font='14' rise='-1000'>󰈀</span> {ifname} {ipaddr}/{cidr}"
   },
   "wireplumber": {
     "format": "{icon}",
     "tooltip-format": "{node_name} - {volume}%",
-    "format-muted": "󰝟",
+    "format-muted": "<span font='14'>󰝟</span>",
     "on-click": "pwvucontrol",
-    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "format-icons": [
+      "<span font='14'>󰕿</span>",
+      "<span font='14'>󰖀</span>",
+      "<span font='14'>󰕾</span>"
+    ],
     "max-volume": 100,
     "scroll-step": 1,
     "reverse-scrolling": true
@@ -158,8 +194,8 @@
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
-      "spotify": "",
-      "default": "🎜"
+      "spotify": "<span font='14'></span>",
+      "default": "<span font='14'>🎜</span>"
     },
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
@@ -181,6 +217,20 @@
   "custom/menu": {
     "format": "",
     "tooltip": false,
-    "on-click": "rofi -show drun"
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+      "firmware": "systemctl reboot --firmware-setup"
+    }
   }
+
+  // "custom/menu": {
+  //   "format": "",
+  //   "tooltip": false,
+  //   "on-click": "rofi -show drun"
+  // }
 }

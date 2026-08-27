@@ -4,12 +4,15 @@
 }
 
 window#waybar {
-  background-color: rgba(40, 40, 40, 0.3);
+  background-color: rgba(30, 30, 30, 0.3);
   color: #ffffff;
-  border-radius: 4px;
-  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-bottom: 1px solid rgba(102, 102, 102, 0.3);
   transition-property: background-color;
   transition-duration: 0.5s;
+}
+
+window#waybar > box {
+  margin: 2px;
 }
 
 window#waybar.hidden {
@@ -34,7 +37,7 @@ button {
 #window,
 #workspaces {
   margin: 0 0 0 1;
-  padding: 0 2;
+  padding: 0 4;
   /* background-color: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(102, 102, 102, 0.3); */
   /* border-radius: 100; */
@@ -45,6 +48,7 @@ button {
 #window {
   padding: 0 8;
   border-left: 1 solid rgba(102, 102, 102, 0.3);
+  font-weight: bold;
   /* transition: opacity;
   transition-duration: 500ms; */
 }
@@ -58,7 +62,7 @@ window#waybar.empty #window {
 #workspaces button {
   padding: 0 4 0 4;
   margin: 4 1;
-  background-color: rgba(0, 0, 0, 0.125);
+  background-color: rgba(0, 0, 0, 0.2);
   color: #ffffff;
   border-radius: 4px;
   transition: all;
@@ -147,7 +151,7 @@ window#waybar.empty #window {
 #custom-menu {
   margin: 0 0 0 2;
   padding: 0 12;
-  font-size: 22px;
+  font-size: 25px;
   border-right: 1px solid rgba(102, 102, 102, 0.3);
 }
 
