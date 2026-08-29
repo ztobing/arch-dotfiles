@@ -36,8 +36,8 @@ hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = "10" }))
 hl.bind(hyper .. " + A", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(hyper .. " + S", hl.dsp.focus({ workspace = "e+1" }))
 
--- Scratchpad (Special Workspace)
-hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "special:magic" }))
+-- Scratchpad (Special Workspace) 
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Etc / Session Control
