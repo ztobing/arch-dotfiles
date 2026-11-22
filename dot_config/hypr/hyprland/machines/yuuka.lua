@@ -17,22 +17,15 @@ hl.monitor({
 })
 
 -- TCL C745 TV
-local display_ids = {
-    "desc:XXX Beyo TV 0x00010000",
-    "desc:XXX Beyond TV 0x00010000"
-}
-
-for _, display_id in ipairs(display_ids) do
-    hl.monitor({
-        output = display_id,
-        disabled = true,
-        mode = "3840x2160@120.00Hz",
-        position = "-3840x0",
-        bitdepth = 10,
-        supports_wide_color = 1,
-        scale = 2,
-    })
-end
+hl.monitor({
+    output = "HDMI-A-1",
+    disabled = true,
+    mode = "2560x1440@120.00Hz",
+    position = "auto-center-left",
+    bitdepth = 10,
+    supports_wide_color = 1,
+    scale = 1.33,
+})
 
 hl.config({
     render = {
