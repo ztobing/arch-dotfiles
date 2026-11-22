@@ -28,3 +28,10 @@ hl.window_rule({
     match = { class = "MuseDash" },
     immediate = true,
 })
+
+hl.window_rule({
+  name  = "gamescope-tv",
+  match = { class = "^gamescope$" },
+  monitor    = "HDMI-A-1",
+  fullscreen = true,
+})
